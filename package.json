@@ -1,0 +1,12 @@
+{
+  "name": "a3-PersonalFinanceTracker",
+  "version": "1.0.0",
+  "description": "A personal finance tracker web application for CS4241 Assignment 3",
+  "author": "Rohit Tallapragada",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mime": "^2.6.0"
+  }
+}
