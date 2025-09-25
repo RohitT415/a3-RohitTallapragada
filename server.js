@@ -25,31 +25,34 @@ const connectDB = async () => {
         console.log('Attempting to connect to MongoDB...')
         console.log('URI:', process.env.MONGODB_URI ? 'URI found' : 'URI missing')
 
-
         const client = new MongoClient(process.env.MONGODB_URI, {
             serverSelectionTimeoutMS: 30000,
             connectTimeoutMS: 30000,
         })
 
-
+        console.log('Attempting client.connect()...')
         await client.connect()
+        console.log('Client connected successfully')
+
         db = client.db('finance-tracker')
         usersCollection = db.collection('users')
         expensesCollection = db.collection('expenses')
-        console.log('Connected to MongoDB successfully')
+        console.log('Database and collections initialized')
 
         // Test the connection
+        console.log('Testing connection with ping...')
         await db.admin().ping()
-        console.log('MongoDB ping successful')
+        console.log('MongoDB ping successful - connection fully established')
     } catch (error) {
-        console.error('MongoDB connection error:', error)
+        console.error('MongoDB connection error:', error.message)
         console.log('Continuing without database - using temporary in-memory storage for development')
 
-        // Fallback to in-memory storage for development
+        // Fallback to in-memory storage
         global.tempUsers = {}
         global.tempExpenses = {}
 
-        // Mock collections
+        // Mock collections (existing code...)
+
         usersCollection = {
             findOne: async (query) => global.tempUsers[query.username] || null,
             insertOne: async (doc) => { global.tempUsers[doc.username] = doc; return { insertedId: doc.username } }
