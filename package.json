@@ -1,12 +1,20 @@
 {
   "name": "a3-PersonalFinanceTracker",
   "version": "1.0.0",
-  "description": "A personal finance tracker web application for CS4241 Assignment 3",
+  "description": "A personal finance tracker web application with user authentication for CS4241 Assignment 3",
   "author": "Rohit Tallapragada",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "mime": "^2.6.0"
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.20.0",
+    "dotenv": "^17.2.2",
+    "mime": "^2.6.0",
+    "body-parser": "^2.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

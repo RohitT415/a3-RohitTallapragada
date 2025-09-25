@@ -1,0 +1,59 @@
+/* Custom CSS to complement Bootstrap */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Ensure full height for login centering */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* Custom card styling */
+.card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Success theme color override if needed */
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Table responsive improvements */
+.table-responsive {
+  border-radius: 0.375rem;
+}
+
+/* Budget cards styling */
+.border-success {
+  border-color: #28a745 !important;
+}
+
+.border-warning {
+  border-color: #ffc107 !important;
+}
+
+.border-danger {
+  border-color: #dc3545 !important;
+}
+
+/* Small custom adjustments */
+.navbar-brand {
+  font-weight: normal;
+}
+
+/* Footer space if needed */
+body {
+  padding-bottom: 2rem;
+}
